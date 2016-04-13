@@ -27,9 +27,9 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import org.fxmisc.richtext.MouseOverTextEvent;
 import org.fxmisc.richtext.StyleClassedTextArea;
 import org.fxmisc.richtext.StyleSpansBuilder;
-import org.fxmisc.richtext.antlr.StructuredHighlighter.ErrorHighlighter;
-import org.fxmisc.richtext.antlr.StructuredHighlighter.ParseRuleHighlighter;
-import org.fxmisc.richtext.antlr.StructuredHighlighter.TokenHighlighter;
+import com.empowerops.antextfx.StructuredHighlighter.ErrorHighlighter;
+import com.empowerops.antextfx.StructuredHighlighter.ParseRuleHighlighter;
+import com.empowerops.antextfx.StructuredHighlighter.TokenHighlighter;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
