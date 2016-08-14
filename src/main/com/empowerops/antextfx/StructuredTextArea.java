@@ -111,6 +111,22 @@ public class StructuredTextArea extends StyleClassedTextArea {
         }
     }
 
+    /**
+     * @deprecated this constructor exists for SceneBuilder only.
+     * Use {@link StructuredTextArea(String, String, String)} from FXML or
+     * {@link StructuredTextArea(Class, Class, Function)} from Java.
+     */
+    public StructuredTextArea(){
+        this.parserClass = Parser.class;
+        this.lexerClass = Lexer.class;
+
+        this.rootProduction = x -> { throw new UnsupportedOperationException("Parser/Lexer not correctly loaded."); };
+        this.lexerCtor = x -> { throw new UnsupportedOperationException("Parser/Lexer not correctly loaded."); };
+        this.parserCtor = x -> { throw new UnsupportedOperationException("Parser/Lexer not correctly loaded."); };
+
+        log.warning("Defunct StructuredTextArea was loaded.");
+    }
+
     private void logConstructionFailure(String parserClass, String lexerClass, String rootProduction, Throwable exception) {
 
         // so, I don't like this, but I don't like the FXML loader more, and this is designed to be used from FXML.

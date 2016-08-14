@@ -12,6 +12,10 @@ import javafx.stage.Stage;
  */
 public class SampleApp extends Application {
 
+    private static final String INITIAL_TEXT = "" +
+            "This is a sample app!\n" +
+            "1 + 2 / 3";
+
     public static void main(String[] args){
         Application.launch(args);
     }
@@ -21,20 +25,26 @@ public class SampleApp extends Application {
 
         VBox root = new VBox();
 
-        StructuredTextArea codeArea = new StructuredTextArea(
+        StructuredTextArea sampleArea = new StructuredTextArea(
                 MathyParser.class,
                 MathyLexer.class,
                 MathyParser::block
         );
 
-        root.getChildren().add(codeArea);
+        root.getChildren().add(sampleArea);
 
-        codeArea.getHighlighters().add(new LexicalBracketCountingHighlighter("(", ")", "bracket"));
+        sampleArea.setImplicitTerminalStyle(true);
+        sampleArea.getHighlighters().add(new LexicalBracketCountingHighlighter("(", ")", "bracket"));
+        sampleArea.getStyleClass().add("code-area");
+
+        sampleArea.replaceText(0, 0, INITIAL_TEXT);
+        sampleArea.setPrefHeight(200);
+        sampleArea.setPrefWidth(600);
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("Mathy.css");
+        scene.getStylesheets().add(getClass().getResource("Mathy.css").toExternalForm());
         primaryStage.setScene(scene);
-        primaryStage.setTitle("");
+        primaryStage.setTitle("ANTextFX Demo");
         primaryStage.show();
     }
 }
