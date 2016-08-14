@@ -21,11 +21,18 @@ public class SampleApp extends Application {
 
         VBox root = new VBox();
 
-        StructuredTextArea codeArea = new StructuredTextArea(MathyParser.class, MathyLexer.class, MathyParser::block);
+        StructuredTextArea codeArea = new StructuredTextArea(
+                MathyParser.class,
+                MathyLexer.class,
+                MathyParser::block
+        );
 
         root.getChildren().add(codeArea);
 
+        codeArea.getHighlighters().add(new LexicalBracketCountingHighlighter("(", ")", "bracket"));
+
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("Mathy.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("");
         primaryStage.show();
