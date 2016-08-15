@@ -8,10 +8,9 @@ import org.junit.Test
 /**
  * Created by Geoff on 4/11/2016.
  */
-class LexicalBracketCountingHighlighterFixture {
+class TestLexicalBracketCountingHighlighterFixture {
 
     @Test fun when_highlighting_a_selected_bracket_should_properly_highlight_corresponding_bracket(){
-
         //setup
         val listener = LexicalBracketCountingHighlighter("(", ")", "bracket")
         val textArea = StructuredTextArea(
