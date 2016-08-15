@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
- 
+	
 	<groupId>com.empowerops</groupId>
 	<artifactId>antextfx</artifactId>
 	<version>0.1-SNAPSHOT</version>
@@ -34,10 +34,10 @@
 			<version>1.3.9</version>
 		</dependency>
 		<dependency>
-				<groupId>org.jetbrains.kotlin</groupId>
-				<artifactId>kotlin-stdlib</artifactId>
-				<version>1.0.3</version>
-				<scope>test</scope>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib</artifactId>
+			<version>1.0.3</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- Test dependencies! -->
 		<dependency>
